@@ -75,4 +75,3 @@ FAQs are grouped into six related topic clusters on the homepage, with additiona
 Responsive rules are in `src/styles/responsive.css`. Phone and tablet layouts use flexible columns, a shrinking header logo, 16px inputs, larger body/footer text and touch targets. Service content stacks below 960px; navigation collapses below 1000px. Narrow-phone galleries use one column. The cookie table can scroll within its own labelled region. Browser zoom is allowed and reduced-motion preferences are respected.
 
 Verification completed: production build, static link/asset checks, viewport metadata on all 11 routes and final stylesheet inclusion/order. These are source/build checks, not physical-device or browser viewport tests. iOS Safari, Android Chrome/Samsung Internet, portrait/landscape, enlarged text and actual on-screen keyboard behaviour still require browser/device QA before claiming universal compatibility.
-

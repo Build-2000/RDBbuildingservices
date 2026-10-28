@@ -1,0 +1,9 @@
+---
+import Page from '../../layouts/Page.astro';
+import {services} from '../../data/services';
+---
+<Page title="Building Services in Sutton Coldfield | RDB Services" description="Explore RDB’s modular buildings, garden rooms, offices, catering units and container conversions. Practical UK guides to help plan your project.">
+<section class="service-intro wrap"><div class="breadcrumbs"><a href="/">Home</a><span>/</span><span>Services</span></div><p class="eyebrow">RDB BUILDING SERVICES LTD</p><h1>Five services.<br/><em>A space that suits you.</em></h1><p class="lead">Explore the possibilities, understand the practical details and prepare a clearer brief for your next building project.</p><p>Based in Sutton Coldfield, West Midlands, RDB welcomes enquiries from UK homeowners and businesses. Each guide covers the decisions that shape a project, from layout and specification to site access and permissions. Availability, location and scope are confirmed individually.</p></section>
+<section class="section services"><div class="wrap"><div class="cards">{services.map((s,i)=><article class="card"><a class="card-image" href={`/services/${s.slug}/`}><img src={`/images/${s.image}`} alt={s.alt} loading="lazy"/></a><div class="card-content"><h2>{s.name}</h2><p>{s.description}</p><a href={`/services/${s.slug}/`}>Explore {s.name.toLowerCase()} <span>↗</span></a></div></article>)}</div></div></section>
+<section class="section wrap service-cta"><p class="eyebrow">YOUR NEXT STEP</p><h2>Not sure which route fits?</h2><p>Start with what you want the space to do. Include your site postcode, approximate size, budget and preferred timescale.</p><a class="button" href="/contact/">Prepare your project brief <span>↗</span></a></section>
+</Page>

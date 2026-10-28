@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.git/
+.env
+.env.*
+reference.html
+company-record.html
+scripts/*.cjs
+!scripts/verify-site.cjs

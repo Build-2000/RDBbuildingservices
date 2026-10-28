@@ -1,0 +1,22 @@
+---
+import {services} from '../data/services';
+import '../styles/header.css';
+---
+<a class="skip" href="#main">Skip to content</a>
+<div class="topbar"><div class="wrap"><span>Sutton Coldfield, West Midlands · UK</span><span>Modular buildings &amp; container conversions</span></div></div>
+<header><div class="wrap header-inner"><a href="/" aria-label="RDB Building Services home"><img class="logo" src="/images/rdb-logo.png" alt="RDB Building Services LTD — modular buildings, garden rooms, offices, catering units, container conversions" width="496" height="123"/></a><button class="menu" aria-expanded="false" aria-controls="navigation">Menu <span>☰</span></button><nav id="navigation" aria-label="Main navigation"><a href="/">Home</a><details class="nav-services"><summary>Services <svg width="10" height="7" viewBox="0 0 10 7" aria-hidden="true"><path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></summary><div class="services-dropdown"><a class="dropdown-overview" href="/services/">Explore all services <span aria-hidden="true">↗</span></a>{services.map(service=><a href={`/services/${service.slug}/`} aria-current={Astro.url.pathname===`/services/${service.slug}/`?'page':undefined}>{service.name}</a>)}</div></details><a href="/#about">About us</a><a href="/contact/" aria-current={Astro.url.pathname==='/contact/'?'page':undefined}>Contact</a><a class="button small mobile-nav-cta" href="/contact/">Let’s talk <span>↗</span></a></nav><a class="button small header-cta" href="/contact/">Let’s talk <span>↗</span></a></div></header>
+<script>
+const dropdown=document.querySelector<HTMLDetailsElement>('.nav-services');
+const summary=dropdown?.querySelector('summary');
+document.addEventListener('click',event=>{if(dropdown?.open && event.target instanceof Node && !dropdown.contains(event.target))dropdown.open=false;});
+dropdown?.addEventListener('keydown',event=>{if(event.key==='Escape'){dropdown.open=false;summary?.focus();event.stopPropagation();}});
+dropdown?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{dropdown.open=false;}));
+const mainMenu=document.querySelector('.menu');mainMenu?.addEventListener('click',()=>{if(dropdown)dropdown.open=false;});
+const panel=document.querySelector<HTMLElement>('#navigation');
+const toggle=document.querySelector<HTMLButtonElement>('.menu');
+const closeMenu=()=>{panel?.classList.remove('open');toggle?.setAttribute('aria-expanded','false');if(dropdown)dropdown.open=false;};
+document.addEventListener('keydown',event=>{if(event.key==='Escape' && panel?.classList.contains('open')){closeMenu();toggle?.focus();}});
+document.addEventListener('click',event=>{if(panel?.classList.contains('open') && event.target instanceof Node && !document.querySelector('header')?.contains(event.target))closeMenu();});
+window.matchMedia('(max-width:1000px)').addEventListener('change',closeMenu);
+
+</script>

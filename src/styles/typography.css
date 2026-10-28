@@ -1,0 +1,13 @@
+/* Self-hosted Latin variable fonts; licences are retained in public/fonts. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/inter-latin-variable.woff2') format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:500 700;font-display:swap;src:url('/fonts/plus-jakarta-sans-latin-variable.woff2') format('woff2')}
+:root{--font-body:'Inter',Arial,Helvetica,sans-serif;--font-heading:'Plus Jakarta Sans','Inter',Arial,sans-serif;font-family:var(--font-body)}
+body{font-family:var(--font-body);font-weight:400}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:700;letter-spacing:-.035em}
+h1{line-height:1.13}
+h2{line-height:1.2}
+h3,h4,h5,h6{line-height:1.35;letter-spacing:-.025em}
+input,select,textarea,button{font-family:var(--font-body)}
+.service-article p,.legal-content p,.legal-content li{line-height:1.85}
+.site-footer .footer-invitation h2{font-weight:600}
+@media(max-width:760px){h1,.hero h1,.service-intro h1{line-height:1.18}.service-article h2,.legal-content h2{line-height:1.3}}

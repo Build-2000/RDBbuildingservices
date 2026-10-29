@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import '../styles/responsive.css';
 import '../styles/typography.css';
-const {title,description,image,service}=Astro.props;
+const {title,description,image,service,noindex}=Astro.props;
 ---
-<!doctype html><html lang="en-GB"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><SEO title={title} description={description} image={image} service={service}/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/></head><body><Header/><main id="main"><slot/></main><Footer/><script>
+<!doctype html><html lang="en-GB"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><SEO title={title} description={description} image={image} service={service} noindex={noindex}/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/></head><body><Header/><main id="main"><slot/></main><Footer/><script>
 const menu=document.querySelector<HTMLButtonElement>('.menu');const nav=document.querySelector('nav');menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav?.classList.toggle('open',open)});nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}));
 </script></body></html>

@@ -1,0 +1,9 @@
+---
+interface Props { source: string; }
+const {source}=Astro.props;
+---
+<input type="hidden" name="_subject" value={`RDB website enquiry — ${source}`}/>
+<input type="hidden" name="_template" value="table"/>
+<input type="hidden" name="_url" value={`https://rdbbuildingservices.co.uk${source==='Homepage'?'/':'/contact/'}`}/>
+<input type="hidden" name="_next" data-form-redirect disabled/>
+<div hidden aria-hidden="true"><label>Leave this field empty<input type="text" name="_honey" tabindex="-1" autocomplete="off"/></label></div>

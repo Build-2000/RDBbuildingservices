@@ -26,7 +26,7 @@
 .footer-disclosures-inner{display:flex;justify-content:space-between;gap:40px;padding-top:21px;padding-bottom:21px}
 .site-footer .footer-disclosures p{font-size:10px;line-height:1.9;color:#637078;margin:0}
 .site-footer .footer-disclosures strong{font-size:10px;font-weight:600;color:#384b55;letter-spacing:.025em}
-.footer-disclosures-inner>p:last-child{text-align:right}
+
 .footer-disclosures a{text-decoration:underline;text-underline-offset:3px}
 .footer-utility{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-top:25px;padding-bottom:25px}
 .site-footer .footer-utility p{font-size:10px;color:#637078;margin:0}

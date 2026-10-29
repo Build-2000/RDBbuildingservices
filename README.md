@@ -39,7 +39,7 @@ The five service routes under `/services/` are modular-buildings, garden-rooms, 
 
 ## Enquiry and policies
 
-The homepage form downloads a text brief on the visitor’s device. The dedicated `/contact/` form can either download a brief or open a prefilled email in the visitor’s email application for review and sending. Neither form sends fields to a server or submits email directly; delivery is not guaranteed by opening an email app. The website does not take orders or payments.
+Both forms now submit a native HTTPS POST to `https://formsubmit.co/info@rdbbuildingservices.co.uk`. FormSubmit handles email delivery and its hosted spam check. The browser sets the return URL to `/thank-you/` on the current website origin; without JavaScript, FormSubmit uses its own result page. A disabled redirect field is excluded without JavaScript. No SMTP credentials or API keys are required. Initial inbox activation must be completed by the email owner, and actual email delivery must be verified separately.
 
 The footer links to website terms, privacy and cookie pages. Terms and privacy remain drafts for business review. Known company, domain, email and intended Vercel details have been entered; do not remove the remaining review notice until the real operating arrangements are confirmed.
 
@@ -79,3 +79,9 @@ Verification completed: production build, static link/asset checks, viewport met
 ## Typography
 
 The selected pairing is Plus Jakarta Sans for headings and Inter for body text, navigation and forms. The Latin variable WOFF2 files are self-hosted under `public/fonts/`, with SIL Open Font Licence texts beside them. Styles are in `src/styles/typography.css`; both files are preloaded and use font-display: swap. Visitors do not make Google Fonts requests.
+
+## FormSubmit setup and verification
+
+Both forms include a subject, readable email template, source URL and honeypot. Standard FormSubmit spam protection remains enabled. The thank-you page is noindex and excluded from the sitemap. Public privacy and cookie pages disclose FormSubmit without naming mailbox or hosting providers. They do not claim messages stay local. Existing unrelated email-signature files are not part of this change.
+
+FormSubmit documentation: https://formsubmit.co/documentation . Activation and retention: https://formsubmit.co/help . Privacy: https://formsubmit.co/privacy.pdf . An activation email may be generated on the first real submission; the mailbox owner must activate it. FormSubmit returned HTTP 521 during implementation; routing can be configured but delivery should not be described as tested until service availability and inbox receipt are confirmed.

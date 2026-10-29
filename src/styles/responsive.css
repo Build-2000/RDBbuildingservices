@@ -126,3 +126,4 @@ summary>span{flex-shrink:0}
  .footer-utility{padding-bottom:max(20px,env(safe-area-inset-bottom))}
  .footer-top{white-space:nowrap}
 }
+button[type="submit"]:disabled{opacity:.65;cursor:wait;transform:none}.form-note a{text-decoration:underline;text-underline-offset:3px}
